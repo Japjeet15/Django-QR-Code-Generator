@@ -16,10 +16,11 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = os.environ.get(
-    'ALLOWED_HOSTS',
-    '127.0.0.1,localhost'
-).split(',')
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    ".vercel.app",
+]
 
 
 # Application definition
@@ -128,3 +129,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CSRF_TRUSTED_ORIGINS = [
+    "https://qrgen2026-mocha.vercel.app",
+]
